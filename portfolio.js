@@ -124,7 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // selector jardines cuiando se le hace click cambie los colores de la web, es donde estan los colorcitos
     // document.documentElement.style.setProperty para cambiar las variables CSS de todo el sitio web al mismo tiempo.
     const panel = document.getElementById("themePanel");
-    document.getElementById("themeToggleBtn").addEventListener("click", () => panel.classList.toggle("active"));
+    if(document.getElementById("themeToggleBtn")) {
+        document.getElementById("themeToggleBtn").addEventListener("click", () => panel.classList.toggle("active"));
+    }
 
     document.querySelectorAll(".color-dot-opt").forEach(btn => {
         btn.addEventListener("click", () => {
@@ -139,8 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const words = ["experiencias bonitas.", "soluciones de software", "interfaces super hiper megas lindisimas"];
     let wIdx = 0, cIdx = 0, del = false;
     function type() {
+        const el = document.getElementById("typewriter");
+        if(!el) return;
         const cur = words[wIdx];
-        document.getElementById("typewriter").textContent = del ? cur.substring(0, cIdx - 1) : cur.substring(0, cIdx + 1);
+        el.textContent = del ? cur.substring(0, cIdx - 1) : cur.substring(0, cIdx + 1);
         cIdx = del ? cIdx - 1 : cIdx + 1;
         let s = del ? 40 : 80;
         if (!del && cIdx === cur.length) { s = 2000; del = true; }
@@ -167,7 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const h = document.documentElement.scrollHeight - window.innerHeight;
         const progress = document.getElementById("scroll-progress");
         if(progress) progress.style.width = (window.scrollY / h * 100) + "%";
-        document.getElementById("mainHeader").classList.toggle("scrolled", window.scrollY > 40);
+        const header = document.getElementById("mainHeader");
+        if(header) header.classList.toggle("scrolled", window.scrollY > 40);
     });
 
     document.querySelectorAll(".tab-btn").forEach(b => {
@@ -175,7 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".tab-btn").forEach(x => x.classList.remove("active"));
             document.querySelectorAll(".tab-content-panel").forEach(x => x.classList.remove("active"));
             b.classList.add("active");
-            document.getElementById(b.getAttribute("data-tab")).classList.add("active");
+            const panel = document.getElementById(b.getAttribute("data-tab"));
+            if(panel) panel.classList.add("active");
         });
     });
 
@@ -183,12 +189,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function animateCounters() {
         document.querySelectorAll(".counter").forEach(c => {
-            const tgt = +c.getAttribute("data-target");
+            const tgt = parseInt(c.getAttribute("data-target"));
             let cur = 0;
+            const step = Math.max(1, tgt / 20);
+
             const u = () => {
-                cur += tgt / 15;
-                if (cur < tgt) { c.innerText = Math.ceil(cur) + "+"; setTimeout(u, 50); }
-                else c.innerText = tgt + "+";
+                cur += step;
+                if (cur < tgt) {
+                    c.innerText = Math.floor(cur) + "+";
+                    setTimeout(u, 60);
+                } else {
+                    c.innerText = tgt + "+";
+                }
             };
             u();
         });
@@ -198,9 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function handleFormSubmit(e) {
     e.preventDefault();
-    document.getElementById("formSuccess").classList.add("active");
+    const success = document.getElementById("formSuccess");
+    if(success) success.classList.add("active");
     setTimeout(() => {
-        document.getElementById("formSuccess").classList.remove("active");
+        if(success) success.classList.remove("active");
         e.target.reset();
     }, 3000);
 }
