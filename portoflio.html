@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div id="scroll-progress"></div>
+    <div class="ambient-glow"></div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="cursor-dot" id="dot"></div>
+    <div class="cursor-outline" id="outline"></div>
+
+    <div class="theme-panel" id="themePanel">
+        <button class="theme-toggle-btn" id="themeToggleBtn">
+            <i class="fa-solid fa-fan"></i>
+        </button>
+        <h4>Jardin de colors</h4>
+        <div class="color-options">
+            <button class="color-dot-opt active" data-primary="#ffb6c1" data-secondary="ff79c6" style="background: #ff79c6;">Sakura</button>
+            <button class="color-dot-opt" data-primary="#a8ffb2" data-secondary="#50fa7b" style="background: #50fa7b;"> Menta</button>
+            <button class="color-dot-opt" data-primary="#bd93f9" data-secondary="#bd93f9" style="background: #bd93f9;"> Lavanda</button>
+            <button class="color-dot-opt" data-primary="#ffeea8" data-secondary="#ffeea8" style="background: #ffeea8;"> Girsaol</button>
+        </div>
+    </div>
+
+    <header id="mainHeader">
+        <a href="#" class="logo-container"> <span>💮</span>Diego (Who´sUme)</a>
+        <nav>
+
+            <ul>
+                <li><a href="https://www.facebook.com/share/15yXxza5Qek/?mibextid=wwXIfr" class="nav-link active"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a  href="https://www.linkedin.com/in/diego-armando-cuadros-mart%C3%ADnez-78b6723a3/?skipRedirect=true" target="_blank" rel="noopener noreferrer" class="nav-link active"></a><i class="fa-brands fa-linkedin"></i></li>
+                <li><a href="https://www.instagram.com/umi__7690?igsh=MWlkeGpvcnYwNXFnYw%3D%3D&utm_source=qr" class="nav-link active"></a><i class="fa-brands fa-instagram"></i></li>
+                <li><a href="https://github.com/settings/profile" class="nav-link active"></a><i class="fa-brands fa-github"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">Porfolio</div>
+            <h1> HOLA, me gusta controuir redes y administrarlas, me gusta armar cosas como la electronica, tambien analizar datos <span id=""typewriter class="gradient-text"> </span>dependiendo mi humor</h1>
+            <p class="hero-subtitle">Desarrollador de software enfocado en analisis de datos, ciberseguridad y electronica. </p>
+            <a href="#proyectos" class="btn-premium">Ver mi jardín de proyectos  <i class="fa-solid fa-leaf"></i></a>
+        </div>
+    </section>
+    
+    <section id="sobre-mi" class="main-section reveal">
+        <h2 class="section-title">Sobre <span>Mi</span></h2>
+        <div class="about-container">
+            <div class="about-visual">
+                <div class="about-avatar">💮</div>
+                <h3>Diego Armando Cuadros Martínez</h3>
+                <p style="color: var(--text-dark); font-size: 0.9rem;">Software Engineer & data analyst </p>
+                <div class="about-stats">
+                    <div class="stat-box"><h3 class="counter" data-target="3">1</h3><p>Años Exp</p></div>
+                    <div class="stat-box"><h3 class="counter" data-target="3">11</h3><p>Proyectos</p></div>
+                    <div class="stat-box"><h3 class="counter" data-target="3">12</h3><p>Tecnologías</p></div>
+                </div>
+            </div>
+
+            <div class="about-info-box">
+                <div class="tabs-control">
+                    <button class="tab-btn active" data-tab="historia">Filosofía</button>
+                    <button class="tab-btn" data-tab="tech">Stack</button>
+                </div>
+                <div class="tab-content-panel active" id="historia">
+                    <p>Me apasiona demasiadas cosas que es dificil elegir una, pero me encanta armar cosas de electronica, levantar servidores con todos sus servicios y el analisis de datos </p>
+                </div>
+                <div class="tab-content-panel" id="tech">
+                    <p>Manejo herramientas algo modernas para la construccion de servicios web</p>
+                    <div style="margin-top: 10px;">
+                        <span class="tech-tag">Linux </span><span class="tech-tag">DNS</span><span class="tech-tag">DHCP</span><span class="tech-tag">DNS</span>
+                        <span class="tech-tag">CSS3</span><span class="tech-tag">JS</span><span class="tech-tag">PHP</span><span class="tech-tag">C++</span>
+                        <span class="tech-tag">HTML5</span><span class="tech-tag">FLUTTER</span><span class="tech-tag">DART</span><span class="tech-tag">MICROPYTHON</span>
+                        <span class="tech-tag">JAVA</span><span class="tech-tag">GO</span><span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="tech-grid">
+        <div class="tech-category">
+            <h3>Backend & Infra</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">DNS</span>
+                <span class="tech-tag">DHCP</span>
+                <span class="tech-tag">SMTP</span>
+
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Web & Frontend</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">PHP</span>
+
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h3>Embedded & Scripts</h3>
+            <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">MicroPython</span>
+                <span class="tech-tag">Go</span>
+            </div>
+        </div>
+
+    </div>
+    
+    
+
+    <section id="proyectos" class="main-section reveal">
+        <h2 class="section-title">Mis <span>Proyectos</span></h2>
+        <div class="projects-container">
+
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>EstudiAmigo</h3>
+                    <p>Sitio web para cursos en liena gratuito para alumnos para su estudio y conocimiento.</p>
+                    <span class="tech-tag">PHP</span><span class="tech-tag">HTML5</span><span class="tech-tag">CSS MODULES</span><span class="tech-tag">SQL</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>YOLIA</h3>
+                    <p>Sistema de monitoreo de la salud del Adulto Mayor</p>
+                    <span class="tech-tag">FLutter</span><span class="tech-tag">C++</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>ROKOLA</h3>
+                    <p>Programa en python con interfaz interactiva para la reproducción de Música</p>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Mooc</h3>
+                    <p>Creación de contenidmo multimedia de un curso masivo en liena sobre la lengua materna Xi'iuy</p>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Base de datos Distribuidas</h3>
+                    <p>Creación de una Base de datos distribuidas para pagina web</p>
+                    <span class="tech-tag">PHP</span><span class="tech-tag">SQL</span><span class="tech-tag">Maria DB</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Configuración de servicios de red </h3>
+                    <p>Se configuró un servidor con servcios de DNS, DHCP, VLAN para la comunicación entre computadoras</p>
+                </div>
+            </div>
+
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Baston con módulo de vibración para personas con problemas de la visión</h3>
+                    <p>Creación de un bastón para la evasión de obstaculos mediante vibraciones en el brazo</p>
+                    <span class="tech-tag">C++</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Araña Charlotte</h3>
+                    <p>Creación y diseño de una araña robotica para concurso  </p>
+                    <span class="tech-tag">C++</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Carro controlado por bluetooth</h3>
+                    <p>Carro que se controla por vía bluetooth </p>
+                    <span class="tech-tag">C++</span>
+                </div>
+            </div>
+            <div class="project-item js-tilt">
+                <div class="project-img-mock"><i class="fa-solid fa-seedling"></i></div>
+                <div class="project-details">
+                    <h3>Vehiculo aereo no triupulado </h3>
+                    <p>Dron que se controla por vía bluetooth </p>
+                    <span class="tech-tag">C++</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<section id="trayectoria" class="timeline-section">
+    <h2>TRAYECTORIA</h2>
+    <div class="timeline-wrapper">
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="models/cc0__hydrangea_h._macrophylla (1).glb" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+            <div class="content"><span>2023 - Marzo</span><p>Rockola</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+            <div class="content"><span>2024 - Marzo</span><p>Bastón con módulo de vibración</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+            <div class="content"><span>2024 - Abril</span><p>Araña Charlotte</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2024 - Abril</span><p>Interconectividad y activación de servicios en servidores</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2024 - Mayo</span><p>Carro controlado por Bluetooth</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+            
+            <div class="content"><span>2025 - Marzo</span><p>Interconectividad y activación de servicios en servidores</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2025 - Septiembre</span><p>Creación MOOC</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2025 - Mayo</span><p>EstudiAmigo</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2025 - Mayo</span><p>Vehículo Aéreo no Tripulado</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2025 - Octubre</span><p>Desarrollo de Base de datos Distribuidas</p></div>
+        </div>
+
+        <div class="tl-item">
+            <div class="model-container"><model-viewer src="" auto-rotate disable-zoom shadow-intensity="1"></model-viewer></div>
+
+            <div class="content"><span>2026 - Actualidad</span><p>YOLIA</p></div>
+        </div>
+
+    </div>
+</section>
+
+
+
+    <section id="contacto" class="main-section reveal">
+        <h2 class="section-title"> HI <span>LET'S TALK!!!</span></h2>
+        <div class="contact-grid">
+            <div>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Do you have any project? or something lke that?, come on, talk to me rn</p>
+                <p style="color: var(--text-dark); font-size: 0.9rem;"><i class="fa-solid fa-envelope"></i>diegocuadros101@gmail.com</p>
+            </div>
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-success-msg" id="formSuccess">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>the message has been planted!!!!</h3>
+                    <p>I'll respond you so quickly, </p>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder=" " required>
+                    <label > Full Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email" placeholder=" " required>
+                    <label > Email</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control"  placeholder=" " required>
+                    <label > Message</label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p> &copy; 2026 DIego Cuadros. Hecho con muchas ganas de conseguir empleo dependiendo mis habilidades uwu</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
