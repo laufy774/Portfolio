@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // cursor con inercia
+    // cursor con inercia AHORA SI SALE EL CURSOR
+    // cada vex que el cursor se mueve, el esta cosa calcula la distancia donde esta el circulo
+    // si el usuario pasa anfrente del boton, el circulo se agranda (a veces no funciona)
     const dot = document.getElementById("dot");
     const outline = document.getElementById("outline");
     let mouseX = 0, mouseY = 0, outX = 0, outY = 0;
@@ -21,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
         el.addEventListener("mouseleave", () => document.body.classList.remove("hovering"));
     });
 
-    // florecitas
+    // florecitas funciones para que se puedan mover y rotal, colocacion de PI para que roten aun no entiendo bien como funciona
+    // investigar que hacen
     const canvas = document.getElementById("bg-canvas");
     const ctx = canvas.getContext("2d");
     let flowerArray = [];
@@ -70,7 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.restore();
         }
     }
-
+//  el canvas es el lienzo o sea donde van a estar las flores se prepara para que siempre tenga el mismo tamaño
+// el flor partticle es básicamente un "plano de construcción" para cada flor. Cuando el código dice new FlowerParticle(), está creando una flor nueva con características únicas
+// APARECEN EN ALEATORIEDAD
+// el update es como la mema de la flor Cada vez que pasa un instante, calcula dónde debe estar la flor ahora basándose en su velocidad. Si la flor se sale de la pantalla, el código la teletransporta al lado opuesto
+// y el draw es el pincel basicamente
     function init() {
         flowerArray = [];
         for (let i = 0; i < 45; i++) flowerArray.push(new FlowerParticle());
@@ -114,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // selector jardines
+    // selector jardines cuiando se le hace click cambie los colores de la web, es donde estan los colorcitos
+    // document.documentElement.style.setProperty para cambiar las variables CSS de todo el sitio web al mismo tiempo.
     const panel = document.getElementById("themePanel");
     document.getElementById("themeToggleBtn").addEventListener("click", () => panel.classList.toggle("active"));
 
@@ -126,7 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.documentElement.style.setProperty('--accent-secondary', btn.getAttribute("data-secondary"));
         });
     });
-
+// Es ese efecto donde las palabras aparecen letra por letra, se borran y cambian por otras automáticamente. 
+// No me funciona:)))
     const words = ["experiencias bonitas.", "soluciones de software", "interfaces super hiper megas lindisimas"];
     let wIdx = 0, cIdx = 0, del = false;
     function type() {
@@ -140,7 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     type();
 
-    // Intersection Observer y Scroll
+    // Intersection Observer y Scroll está pendiente de cuándo los elementos de tu web entran en la pantalla del usuario.
+    // la barra de progreso es cuando se mueve la rueda del mouse
+    // mo funciona:) posiblemente el css esta mal o el selectr de la clase by ID
     const observer = new IntersectionObserver(entries => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -168,6 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // esto hace que los numero apatecencan con animacion de subida en vez de estativos, no puedo checarlo pq no me da tiempo ajja
+
     function animateCounters() {
         document.querySelectorAll(".counter").forEach(c => {
             const tgt = +c.getAttribute("data-target");
@@ -181,6 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// Este código controla qué pasa cuando alguien te envía un mensaje desde tu web.
 
 function handleFormSubmit(e) {
     e.preventDefault();

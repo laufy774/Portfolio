@@ -1,3 +1,8 @@
+/* el root se supone selecciona la etiqueta principal de la pagina
+el cuerpo de l html sin excepciones 
+la variable se define usando primero el -- ,
+se crea  una paleta de colores
+se puede usar en donde sea, */
 :root{
     --bg-dark: #090514;
     --bg-card: rgba(18,11,36,0.6);
@@ -682,4 +687,44 @@ footer{
     body{cursor:auto;}
     .cursor-dot, .cursor-outline{display: none;}
     nav ul{display: none;}
+}
+.btn-submit {
+    /* Gradiente basado en tus variables de color */
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: #ffffff;
+    
+    /* Espaciado y forma */
+    padding: 14px 32px;
+    border: none;
+    border-radius: 30px;
+    
+    /* Tipografía */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Interacción */
+    cursor: pointer;
+    transition: all 0.4s ease;
+    
+    /* Sombra para efecto flotante */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
+    /* Alineación de icono */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Efecto al pasar el mouse */
+.btn-submit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.2); /* Se vuelve un poco más brillante */
+}
+
+/* Efecto al hacer clic */
+.btn-submit:active {
+    transform: translateY(0);
 }

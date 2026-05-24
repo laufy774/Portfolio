@@ -20,7 +20,7 @@
 
     <div class="cursor-dot" id="dot"></div>
     <div class="cursor-outline" id="outline"></div>
-
+<!-- Partecita donde se cambian los colorcitos (uso de variables fijas, creo que asi se llaman) -->
     <div class="theme-panel" id="themePanel">
         <button class="theme-toggle-btn" id="themeToggleBtn">
             <i class="fa-solid fa-fan"></i>
@@ -35,6 +35,7 @@
     </div>
 
     <header id="mainHeader">
+        <!-- SE COLOCA MI NOMBRE Y DESPUES LOS ICONOS DE CONTACTO (ARREGLAR EL LINKEDIN Q NO FUNCIONA) -->
         <a href="#" class="logo-container"> <span>💮</span>Diego (Who´sUme)</a>
         <nav>
 
@@ -48,6 +49,8 @@
     </header>
     <section id="inicio" class="hero-section">
         <div class="hero-content">
+            <!-- se van a usar muuuchos seccion para tener mas organizadas las cosas
+             MI DESCRIPCION, un poco vacía, arreglar despues -->
             <div class="hero-badge">Porfolio</div>
             <h1> HOLA, me gusta controuir redes y administrarlas, me gusta armar cosas como la electronica, tambien analizar datos <span id=""typewriter class="gradient-text"> </span>dependiendo mi humor</h1>
             <p class="hero-subtitle">Desarrollador de software enfocado en analisis de datos, ciberseguridad y electronica. </p>
@@ -56,6 +59,8 @@
     </section>
     
     <section id="sobre-mi" class="main-section reveal">
+        <!-- CARDS PARA LA INFOMRACION SOBRE MI, AGREGAR IMAGEN DESPUEST 
+         uso de clases muy especificas para mejor organuzacion, y contenedores-->
         <h2 class="section-title">Sobre <span>Mi</span></h2>
         <div class="about-container">
             <div class="about-visual">
@@ -68,7 +73,8 @@
                     <div class="stat-box"><h3 class="counter" data-target="3">12</h3><p>Tecnologías</p></div>
                 </div>
             </div>
-
+<!-- FILOSOFIA DE MI PERSONA, SE AGREGA MAS ESTILOS BONITOS Y NO ME SIRVE EL STACK, NO ME REDIRECCIONA, CHECAR ESO
+ -->
             <div class="about-info-box">
                 <div class="tabs-control">
                     <button class="tab-btn active" data-tab="historia">Filosofía</button>
@@ -89,6 +95,7 @@
             </div>
         </div>
     </section>
+    <!-- parte de las tecnologías que uso, todas usan una misma clase para mejor optimizacion -->
         <div class="tech-grid">
         <div class="tech-category">
             <h3>Backend & Infra</h3>
@@ -123,7 +130,7 @@
         </div>
 
     </div>
-    
+    <!-- proyectos que hice, lo mismo de arriba pero dieferente clases y diseño. se agrego font awesome para los iconos de florecitas -->
     
 
     <section id="proyectos" class="main-section reveal">
@@ -213,7 +220,8 @@
 
         </div>
     </section>
-
+<!-- USO DE TIMELINE CO DISEÑO, QUITAR MODELOS 3D DESCARGADOS PQ AFECTAN A GITHUB, SOLO AÑADIR UNO O DOS
+ se usa model ciewer para el modelo  -->
 <section id="trayectoria" class="timeline-section">
     <h2>TRAYECTORIA</h2>
     <div class="timeline-wrapper">
@@ -285,7 +293,7 @@
 </section>
 
 
-
+<!-- PARTE PARA CONTACTARME NO OLVIDAR COLOCAR EL BOTON -->
     <section id="contacto" class="main-section reveal">
         <h2 class="section-title"> HI <span>LET'S TALK!!!</span></h2>
         <div class="contact-grid">
@@ -313,6 +321,12 @@
                 <div class="form-group">
                     <input type="text" class="form-control"  placeholder=" " required>
                     <label > Message</label>
+                </div>
+
+                <div class="form-group" style="text-align: right;">
+                <button type="submit" class="btn-submit">
+                        Send Message <i class="fa-solid fa-paper-plane"></i>
+                    </button>
                 </div>
             </form>
         </div>
